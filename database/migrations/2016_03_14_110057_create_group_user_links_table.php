@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserDatasTable extends Migration
+class CreateGroupUserLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateUserDatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_datas', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->int('group_id');
             $table->int('user_id');
-            $table->string('name');
-            $table->string('value');
             $table->timestamps();
         });
     }
